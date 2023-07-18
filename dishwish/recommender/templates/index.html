@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DishWish</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main>
+		{% if show_form %}
+			<h1>Find you favorite dish</h1>
+			<form action="" method="post">
+				{% csrf_token %}
+				<label>Search for a dish</label>
+				<input type="text" name="search_kw"></input>
+			</form>
+		{% else %}
+			<a href="">Home</a>
+			<h1>Results..</h1>
+			<ul>
+				{% for d in data %}
+					<li>{{d.name}}: {{d.price}}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+    </main>
+  </body>
+</html>
