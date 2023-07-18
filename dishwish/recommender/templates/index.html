@@ -19,7 +19,7 @@
 			<h1>Results..</h1>
 			<ul>
 				{% for d in data %}
-					<li>{{d.name}}: {{d.price}}</li>
+				<li>{{d.name}}: {{d.price}} @ {{d.restaurant.name}} : {{d.restaurant.location}}</li>
 				{% endfor %}
 			</ul>
 		{% endif %}
